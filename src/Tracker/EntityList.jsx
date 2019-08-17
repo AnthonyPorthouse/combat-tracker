@@ -25,11 +25,9 @@ export default class EntityList extends React.PureComponent {
 
   render() {
     return (
-      <div>
-        <ul>
-          {this.renderEntities()}
-        </ul>
-      </div>
+      <ul>
+        {this.renderEntities()}
+      </ul>
     );
   }
 }

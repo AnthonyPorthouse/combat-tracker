@@ -20,8 +20,13 @@ export default class EntityRow extends React.PureComponent {
 
   render() {
     return (
-      <li>
-        ({this.state.initiative}) {this.state.name}
+      <li className="flex items-center rounded-sm shadow bg-white mb-2 border-gray-200 pl-1 pr-1">
+        <span className="rounded-lg text-xl mr-2">
+          {this.state.initiative}
+        </span>
+        <span className="uppercase">
+          {this.state.name}
+        </span>
       </li>
     );
   }

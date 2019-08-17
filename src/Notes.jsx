@@ -13,7 +13,7 @@ export default class Notes extends React.PureComponent {
 
   render() {
     return (
-      <div className="w-1/2 p-2">
+      <div className="w-full md:w-1/2 p-2">
         <textarea className="w-full resize-none" value={this.state.notes} onChange={e => this.updateNotes(e.target.value)} />
       </div>
     );

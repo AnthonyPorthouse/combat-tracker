@@ -13,11 +13,11 @@ export default class App extends React.Component {
     return (
       <div className="container mx-auto md:h-screen">
         <div className="flex justify-between">
-          <h1 className="text-xl">{this.state.name}</h1>
-          <h2 className="text-xl">Round {this.state.round}</h2>
+          <h1 className="text-xl pl-3">{this.state.name}</h1>
+          <h2 className="text-xl pr-3">Round {this.state.round}</h2>
         </div>
 
-        <div className="flex flex-auto md:flex-row max-h-full">
+        <div className="flex flex-auto flex-col md:flex-row">
           <Tracker />
           <Notes />
         </div>
