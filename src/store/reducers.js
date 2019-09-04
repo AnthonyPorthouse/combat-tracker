@@ -1,14 +1,31 @@
 import { combineReducers } from 'redux';
-import { ADD_ENTITY } from './actionTypes';
+import { STORE_ENTITY, ENTITY_STORED, FETCH_ENTITIES, RECEIVE_ENTITIES } from './actionTypes';
 
-function entities(state = [], action) {
+function entities(state = {
+  isFetching: false,
+  entities: [],
+}, action) {
   switch (action.type) {
-    case ADD_ENTITY:
+    case STORE_ENTITY:
       return Object.assign({}, state, {
+        isFetching: true,
+      });
+    case ENTITY_STORED:
+      return Object.assign({}, state, {
+        isFetching: false,
         entities: [
           ...state.entities,
           action.entity,
         ],
+      });
+    case FETCH_ENTITIES:
+      return Object.assign({}, state, {
+        isFetching: true,
+      });
+    case RECEIVE_ENTITIES:
+      return Object.assign({}, state, {
+        isFetching: true,
+        entities: action.entities,
       });
     default:
       return state;
