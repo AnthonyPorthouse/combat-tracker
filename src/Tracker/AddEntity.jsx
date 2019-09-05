@@ -11,24 +11,27 @@ class AddEntity extends React.PureComponent {
   }
 
   state = {
-    initiative: '',
+    initiative: 0,
     name: '',
   };
+
+  initialState = this.state;
 
   addNewEntity(event) {
     this.props.dispatch(addEntity(this.state));
 
-    this.setState({
-      initiative: '',
-      name: '',
-    });
+    this.resetState();
 
     event.preventDefault();
   }
 
+  resetState() {
+    this.setState(this.initialState);
+  }
+
   handleInitiativeChange(initiative) {
     this.setState(Object.assign({}, this.state, {
-      initiative,
+      initiative: Number(initiative),
     }));
   }
 

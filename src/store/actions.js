@@ -1,4 +1,3 @@
-import { openDB } from 'idb';
 import {
   STORE_ENTITY,
   ENTITY_STORED,
@@ -6,14 +5,7 @@ import {
   FETCH_ENTITIES,
 } from './actionTypes';
 
-const dbPromise = openDB('CombatTracker', 1, {
-  upgrade(database) {
-    database.createObjectStore('entities', {
-      keyPath: 'id',
-      autoIncrement: true,
-    });
-  },
-});
+import dbPromise from './db';
 
 export function storeEntity(entity) {
   return {
@@ -53,7 +45,11 @@ export function fetchEntities() {
 export function receiveEntities(entities) {
   return {
     type: RECEIVE_ENTITIES,
-    entities,
+    entities: entities.map(entity => Object.assign(
+      {},
+      entity,
+      { initiative: Number(entity.initiative) },
+    )),
   };
 }
 

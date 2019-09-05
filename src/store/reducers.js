@@ -24,7 +24,7 @@ function entities(state = {
       });
     case RECEIVE_ENTITIES:
       return Object.assign({}, state, {
-        isFetching: true,
+        isFetching: false,
         entities: action.entities,
       });
     default:
