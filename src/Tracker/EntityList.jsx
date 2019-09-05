@@ -25,9 +25,10 @@ class EntityList extends React.PureComponent {
 
   renderEntities() {
     return this.props.entities.map(entity => (<EntityRow
+      id={entity.id}
       name={entity.name}
       initiative={entity.initiative}
-      key={entity.initiative}
+      key={entity.id}
     />));
   }
 

@@ -1,5 +1,11 @@
 import { combineReducers } from 'redux';
-import { STORE_ENTITY, ENTITY_STORED, FETCH_ENTITIES, RECEIVE_ENTITIES } from './actionTypes';
+import {
+  STORE_ENTITY,
+  ENTITY_STORED,
+  FETCH_ENTITIES,
+  RECEIVE_ENTITIES,
+  ENTITY_REMOVED,
+} from './actionTypes';
 
 function entities(state = {
   isFetching: false,
@@ -26,6 +32,10 @@ function entities(state = {
       return Object.assign({}, state, {
         isFetching: false,
         entities: action.entities,
+      });
+    case ENTITY_REMOVED:
+      return Object.assign({}, state, {
+        entities: state.entities.filter(entity => entity.id !== action.entityId),
       });
     default:
       return state;

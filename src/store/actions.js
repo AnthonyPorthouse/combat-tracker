@@ -3,6 +3,7 @@ import {
   ENTITY_STORED,
   RECEIVE_ENTITIES,
   FETCH_ENTITIES,
+  REMOVE_ENTITY, ENTITY_REMOVED,
 } from './actionTypes';
 
 import dbPromise from './db';
@@ -61,5 +62,30 @@ export function getEntities() {
 
     return db.getAll('entities')
       .then(entities => dispatch(receiveEntities(entities)));
+  };
+}
+
+export function removeEntity(entityId) {
+  return {
+    type: REMOVE_ENTITY,
+    entityId,
+  };
+}
+
+export function entityRemoved(entityId) {
+  return {
+    type: ENTITY_REMOVED,
+    entityId,
+  };
+}
+
+export function deleteEntity(entityId) {
+  return async (dispatch) => {
+    dispatch(removeEntity(entityId));
+
+    const db = await dbPromise;
+
+    return db.delete('entities', entityId)
+      .then(() => dispatch(entityRemoved(entityId)));
   };
 }

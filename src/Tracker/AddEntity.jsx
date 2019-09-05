@@ -63,7 +63,7 @@ class AddEntity extends React.PureComponent {
             value={this.state.name}
           />
           <button
-            className="w-1/12 bg-gray-400 text-xl text-white font-bold px-2 h-full block"
+            className="w-1/12 bg-gray-600 text-xl text-white font-bold px-2 h-full block"
           >+
           </button>
         </form>
