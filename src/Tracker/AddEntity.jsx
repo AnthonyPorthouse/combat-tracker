@@ -46,7 +46,7 @@ class AddEntity extends React.PureComponent {
       <li>
         <form
           onSubmit={e => this.addNewEntity(e)}
-          className="flex items-center rounded-sm shadow bg-white mb-2 border-gray-200 pl-1 pr-1"
+          className="flex items-center rounded-sm shadow bg-white mb-2 border-gray-200 pl-1"
         >
           <input
             type="number"
@@ -63,7 +63,7 @@ class AddEntity extends React.PureComponent {
             value={this.state.name}
           />
           <button
-            className="w-1/12 bg-transparent text-gray-400 font-semibold border border-gray-400 rounded px-2"
+            className="w-1/12 bg-gray-400 text-xl text-white font-bold px-2 h-full block"
           >+
           </button>
         </form>
