@@ -46,7 +46,7 @@ class AddEntity extends React.PureComponent {
       <li>
         <form
           onSubmit={e => this.addNewEntity(e)}
-          className="flex items-center rounded-sm shadow bg-white mb-2 border-gray-200 pl-1"
+          className="flex items-center rounded-sm shadow bg-white mb-2 border-gray-200 pl-1 overflow-hidden"
         >
           <input
             type="number"
