@@ -1,4 +1,12 @@
 {
     "name": "Combat Tracker",
-    "short_name": "Combat Tracker"
+    "short_name": "Combat Tracker",
+    "display": "standalone",
+    "start_url": "https://porthou.se/combat-tracker",
+
+    "background_color": "white",
+
+    "icons": [
+        {"src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png"}
+    ]
 }

@@ -7,9 +7,9 @@ module.exports = {
         html: {
           title: 'Combat Tracker',
           links: [
-            { href: "/static/manifest.webmanifest", rel: "manifest"},
-            { href: "/static/icon-256.png", rel: "shortcut icon"},
-            { href: "/static/icon-256.png", rel: "apple-touch-icon"},
+            { href: "./static/manifest.webmanifest", rel: "manifest"},
+            { href: "./static/icon-256.png", rel: "shortcut icon"},
+            { href: "./static/icon-256.png", rel: "apple-touch-icon"},
           ]
         }
       }
