@@ -19,9 +19,15 @@ module.exports = {
               href: './static/icon-256.png',
               rel: 'apple-touch-icon'
             },
-          ]
-        }
-      }
+          ],
+          meta: [
+            {
+              name: 'theme-color',
+              content: '#FFFFFF',
+            },
+          ],
+        },
+      },
     ],
     [
       '@neutrinojs/style-loader',
@@ -55,7 +61,7 @@ module.exports = {
               relativePaths: false,
               ServiceWorker: {
                 publicPath: '/combat-tracker/sw.js',
-                scope: '/combat-tracker/',
+                scope: './',
               },
               publicPath: '/combat-tracker/',
             },
