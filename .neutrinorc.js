@@ -7,9 +7,18 @@ module.exports = {
         html: {
           title: 'Combat Tracker',
           links: [
-            { href: "./static/manifest.webmanifest", rel: "manifest"},
-            { href: "./static/icon-256.png", rel: "shortcut icon"},
-            { href: "./static/icon-256.png", rel: "apple-touch-icon"},
+            {
+              href: './static/manifest.webmanifest',
+              rel: 'manifest'
+            },
+            {
+              href: './static/icon-256.png',
+              rel: 'shortcut icon'
+            },
+            {
+              href: './static/icon-256.png',
+              rel: 'apple-touch-icon'
+            },
           ]
         }
       }
@@ -36,18 +45,21 @@ module.exports = {
   env: {
     NODE_ENV: {
       production: {
-        output: {
-          publicPath: '/combat-tracker/',
-        },
-
         use: [
-          '@neutrinojs/pwa',
-          {
-            relativePaths: true,
-            ServiceWorker: {
-              scope: '/combat-tracker/',
-            }
+          (neutrino) => {
+            neutrino.config.output.set('publicPath', '/combat-tracker/');
           },
+          [
+            '@neutrinojs/pwa',
+            {
+              relativePaths: false,
+              ServiceWorker: {
+                publicPath: '/combat-tracker/sw.js',
+                scope: '/combat-tracker/',
+              },
+              publicPath: '/combat-tracker/',
+            },
+          ],
         ],
       },
     },
