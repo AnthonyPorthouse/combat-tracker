@@ -5,7 +5,7 @@ module.exports = {
       '@neutrinojs/react',
       {
         html: {
-          title: 'combat-tracker'
+          title: 'Combat Tracker'
         }
       }
     ],
@@ -25,4 +25,12 @@ module.exports = {
       neutrino.config.resolve.alias.store.set('react-dom', '@hot-loader/react-dom');
     }
   ],
+
+  env: {
+    NODE_ENV: {
+      production: {
+        use: ['@neutrinojs/pwa']
+      }
+    }
+  }
 };

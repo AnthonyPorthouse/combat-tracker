@@ -18,7 +18,7 @@ const load = () => render(
 
 // This is needed for Hot Module Replacement
 if (module.hot) {
-  module.hot.accept('./App', load);
+  module.hot.accept();
 }
 
 load();
