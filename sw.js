@@ -1,24 +1,30 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/index.320ec4038b76ea399943.js",
+      "/index.7fa0dffa67bddced96b1.js",
       "/runtime.a9edc78d5cd6127c9851.js",
       "/index.bb01ad375a723c6b759ae15c7dd7f03e.css",
-      "/"
+      "/",
+      "/static/icon-256.png",
+      "/static/icon-512.png",
+      "/static/manifest.webmanifest"
     ],
     "additional": [],
     "optional": []
   },
   "externals": [],
   "hashesMap": {
-    "0903fcd2b3b507d66dbccf2c995e57c56a986403": "/index.320ec4038b76ea399943.js",
+    "0903fcd2b3b507d66dbccf2c995e57c56a986403": "/index.7fa0dffa67bddced96b1.js",
     "dc853b08f6c5bc70f64578cdd2a66cf301d1dcd9": "/runtime.a9edc78d5cd6127c9851.js",
     "602146bf6fbcf7e0bb64f850bdad466d479bfc35": "/index.bb01ad375a723c6b759ae15c7dd7f03e.css",
-    "764c1c6ad2c82f443bd3bb325ddc347e385094e7": "/"
+    "6ad75dd46882dace5b7d72f68268063c976578d0": "/",
+    "741a42113f39c9bb9663ad88cec3251d718b81e3": "/static/icon-256.png",
+    "ed711bde262a495c494f2c646d36df001a436946": "/static/icon-512.png",
+    "2bc2001f0f74d9a87a7def428a97594a398e35a6": "/static/manifest.webmanifest"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "9/9/2019, 8:29:41 AM",
+  "version": "9/9/2019, 3:01:01 PM",
   "name": "webpack-offline",
   "pluginVersion": "4.9.1",
   "relativePaths": false
