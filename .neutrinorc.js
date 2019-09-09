@@ -36,8 +36,20 @@ module.exports = {
   env: {
     NODE_ENV: {
       production: {
-        use: ['@neutrinojs/pwa', {relativePaths: true, publicPath: '/combat-tracker/'}]
-      }
-    }
-  }
+        output: {
+          publicPath: '/combat-tracker/',
+        },
+
+        use: [
+          '@neutrinojs/pwa',
+          {
+            relativePaths: true,
+            ServiceWorker: {
+              scope: '/combat-tracker/',
+            }
+          },
+        ],
+      },
+    },
+  },
 };
