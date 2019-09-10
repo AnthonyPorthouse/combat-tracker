@@ -61,7 +61,7 @@ module.exports = {
               relativePaths: false,
               ServiceWorker: {
                 publicPath: '/combat-tracker/sw.js',
-                scope: 'https://porthou.se/combat-tracker/',
+                scope: 'https://porthou.se/combat-tracker',
               },
               publicPath: '/combat-tracker/',
             },
