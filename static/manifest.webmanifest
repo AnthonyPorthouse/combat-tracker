@@ -2,7 +2,7 @@
     "name": "Combat Tracker",
     "short_name": "Combat Tracker",
     "display": "standalone",
-    "start_url": "https://porthou.se/combat-tracker",
+    "start_url": "https://porthou.se/combat-tracker/",
 
     "background_color": "white",
     "theme_color": "white",
