@@ -9,7 +9,8 @@ import {
 
 function entities(state = {
   isFetching: false,
-  entities: [],
+  entities: {},
+  entityOrder: [],
 }, action) {
   switch (action.type) {
     case STORE_ENTITY:
@@ -19,10 +20,10 @@ function entities(state = {
     case ENTITY_STORED:
       return Object.assign({}, state, {
         isFetching: false,
-        entities: [
-          ...state.entities,
-          action.entity,
-        ],
+        entities: Object.assign({}, state.entities, {
+          [action.entity.id]: action.entity,
+        }),
+        entityOrder: [...state.entityOrder, action.entity.id],
       });
     case FETCH_ENTITIES:
       return Object.assign({}, state, {
@@ -32,6 +33,7 @@ function entities(state = {
       return Object.assign({}, state, {
         isFetching: false,
         entities: action.entities,
+        entityOrder: action.entityOrder,
       });
     case ENTITY_REMOVED:
       return Object.assign({}, state, {

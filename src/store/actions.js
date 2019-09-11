@@ -43,14 +43,11 @@ export function fetchEntities() {
   };
 }
 
-export function receiveEntities(entities) {
+export function receiveEntities(entities, entityOrder) {
   return {
     type: RECEIVE_ENTITIES,
-    entities: entities.map(entity => Object.assign(
-      {},
-      entity,
-      { initiative: Number(entity.initiative) },
-    )),
+    entities,
+    entityOrder,
   };
 }
 
@@ -59,9 +56,23 @@ export function getEntities() {
     dispatch(fetchEntities);
 
     const db = await dbPromise;
+    const entities = {};
+    const entityOrder = [];
 
-    return db.getAll('entities')
-      .then(entities => dispatch(receiveEntities(entities)));
+    let cursor = await db.transaction('entities').store.openCursor();
+
+    while (cursor) {
+      const entity = cursor.value;
+      entity.initiative = Number(entity.initiative);
+
+      entities[entity.id] = entity;
+      entityOrder.push(entity.id);
+
+      // eslint-disable-next-line no-await-in-loop
+      cursor = await cursor.continue();
+    }
+
+    return dispatch(receiveEntities(entities, entityOrder));
   };
 }
 

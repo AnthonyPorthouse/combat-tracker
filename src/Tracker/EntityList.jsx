@@ -9,11 +9,13 @@ import { getEntities } from '../store/actions';
 class EntityList extends React.PureComponent {
   static get propTypes() {
     return {
-      entities: PropTypes.arrayOf(PropTypes.shape({
+      entities: PropTypes.objectOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         initiative: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
       }).isRequired).isRequired,
+
+      entityOrder: PropTypes.arrayOf(PropTypes.number).isRequired,
 
       dispatch: PropTypes.func.isRequired,
     };
@@ -24,11 +26,11 @@ class EntityList extends React.PureComponent {
   }
 
   renderEntities() {
-    return this.props.entities.map(entity => (<EntityRow
-      id={entity.id}
-      name={entity.name}
-      initiative={entity.initiative}
-      key={entity.id}
+    return this.props.entityOrder.map(entityId => (<EntityRow
+      id={this.props.entities[entityId].id}
+      name={this.props.entities[entityId].name}
+      initiative={this.props.entities[entityId].initiative}
+      key={this.props.entities[entityId].id}
     />));
   }
 
@@ -44,6 +46,7 @@ class EntityList extends React.PureComponent {
 
 const mapStateToProps = state => ({
   entities: state.entities.entities,
+  entityOrder: state.entities.entityOrder,
   isLoading: state.entities.isFetching,
 });
 
