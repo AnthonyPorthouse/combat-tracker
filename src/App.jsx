@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Notes from './Notes';
 import Tracker from './Tracker';
+import NoteManager from './Notes/NoteManager';
 
 export default class App extends React.Component {
   state = {
@@ -19,7 +19,7 @@ export default class App extends React.Component {
 
         <div className="flex flex-auto flex-col md:flex-row">
           <Tracker />
-          <Notes />
+          <NoteManager />
         </div>
       </div>
     );
