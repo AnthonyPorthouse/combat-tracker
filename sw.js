@@ -1,7 +1,7 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/combat-tracker/index.b278306f6cde9e234bf9.js",
+      "/combat-tracker/index.52c2bd91fe2e05521da5.js",
       "/combat-tracker/runtime.e1ef61d90532d498a6a9.js",
       "/combat-tracker/index.bb01ad375a723c6b759ae15c7dd7f03e.css",
       "/combat-tracker/",
@@ -14,17 +14,17 @@ var __wpo = {
   },
   "externals": [],
   "hashesMap": {
-    "bf066a0f84ee2e7e622f45e3ebe5cb19b0ea27d2": "/combat-tracker/index.b278306f6cde9e234bf9.js",
+    "4dac24c1664aeb5dd7e3980716f06dd28fba27e1": "/combat-tracker/index.52c2bd91fe2e05521da5.js",
     "88877a0cb8506af7f1783de6d5ac2ad19fb792ef": "/combat-tracker/runtime.e1ef61d90532d498a6a9.js",
     "602146bf6fbcf7e0bb64f850bdad466d479bfc35": "/combat-tracker/index.bb01ad375a723c6b759ae15c7dd7f03e.css",
-    "603eebba2e595bed639679ffe7ab93e2d5d36c62": "/combat-tracker/",
+    "89ba8b9f3cf3ba7102aed8a4b4012abbfe5f6efe": "/combat-tracker/",
     "741a42113f39c9bb9663ad88cec3251d718b81e3": "/combat-tracker/static/icon-256.png",
     "ed711bde262a495c494f2c646d36df001a436946": "/combat-tracker/static/icon-512.png",
     "d1a0ca4d78f7f352900ae812b341001dcca98afb": "/combat-tracker/static/manifest.webmanifest"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "9/11/2019, 6:21:21 AM",
+  "version": "9/13/2019, 9:09:37 PM",
   "name": "webpack-offline",
   "pluginVersion": "4.9.1",
   "relativePaths": false
