@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import EntityRow from './EntityRow';
 import AddEntity from './AddEntity';
-import { getEntities } from '../store/actions';
+import { getEntities } from '../store/entites/actions';
 
 class EntityList extends React.PureComponent {
   static get propTypes() {

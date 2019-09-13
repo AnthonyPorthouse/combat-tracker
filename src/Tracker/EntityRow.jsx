@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteEntity } from '../store/actions';
+import { deleteEntity } from '../store/entites/actions';
 
 class EntityRow extends React.PureComponent {
   constructor(props) {

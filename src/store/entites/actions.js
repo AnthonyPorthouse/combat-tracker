@@ -1,12 +1,10 @@
 import {
-  STORE_ENTITY,
-  ENTITY_STORED,
-  RECEIVE_ENTITIES,
-  FETCH_ENTITIES,
+  STORE_ENTITY, ENTITY_STORED,
+  RECEIVE_ENTITIES, FETCH_ENTITIES,
   REMOVE_ENTITY, ENTITY_REMOVED,
 } from './actionTypes';
 
-import dbPromise from './db';
+import dbPromise from '../db';
 
 export function storeEntity(entity) {
   return {

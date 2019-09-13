@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addEntity } from '../store/actions';
+import { addEntity } from '../store/entites/actions';
 
 class AddEntity extends React.PureComponent {
   static get propTypes() {
