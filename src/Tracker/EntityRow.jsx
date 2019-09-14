@@ -39,14 +39,14 @@ class EntityRow extends React.PureComponent {
             min="0"
             className="rounded-lg text-xl mr-2 w-2/12"
             placeholder="12"
-            onChange={e => this.handleInitiativeChange(e.target.value)}
             value={this.state.initiative}
+            readOnly
           />
           <input
             className="flex-grow uppercase"
             placeholder="Swoe"
-            onChange={e => this.handleNameChange(e.target.value)}
             value={this.state.name}
+            readOnly
           />
           <button
             className="w-1/12 bg-red-500 text-xl text-white font-bold px-2 h-full block"

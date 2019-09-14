@@ -4,21 +4,25 @@ import { connect } from 'react-redux';
 import { addEntity } from '../store/entites/actions';
 
 class AddEntity extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = this.initialState;
+  }
+
   static get propTypes() {
     return {
-      dispatch: PropTypes.func.isRequired,
+      addEntity: PropTypes.func.isRequired,
     };
   }
 
-  state = {
+  initialState = {
     initiative: 0,
     name: '',
   };
 
-  initialState = this.state;
-
   addNewEntity(event) {
-    this.props.dispatch(addEntity(this.state));
+    this.props.addEntity(this.state);
 
     this.resetState();
 
@@ -72,4 +76,6 @@ class AddEntity extends React.PureComponent {
   }
 }
 
-export default connect(null)(AddEntity);
+export default connect(null, {
+  addEntity,
+})(AddEntity);

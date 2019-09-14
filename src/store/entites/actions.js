@@ -26,12 +26,11 @@ export function addEntity(entity) {
 
     const db = await dbPromise;
 
-    return db.add('entities', entity)
-      .then(storedId => dispatch(entityStored(Object.assign(
-        {},
-        entity,
-        { id: storedId },
-      ))));
+    const entityId = await db.add('entities', entity);
+
+    const updatedEntity = Object.assign({}, entity, { id: entityId });
+
+    return dispatch(entityStored(updatedEntity));
   };
 }
 
@@ -57,7 +56,9 @@ export function getEntities() {
     const entities = {};
     const entityOrder = [];
 
-    let cursor = await db.transaction('entities').store.openCursor();
+    let cursor = await db.transaction('entities')
+      .store
+      .openCursor();
 
     while (cursor) {
       const entity = cursor.value;
@@ -94,7 +95,8 @@ export function deleteEntity(entityId) {
 
     const db = await dbPromise;
 
-    return db.delete('entities', entityId)
-      .then(() => dispatch(entityRemoved(entityId)));
+    await db.delete('entities', entityId);
+
+    return dispatch(entityRemoved(entityId));
   };
 }

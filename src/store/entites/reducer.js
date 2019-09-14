@@ -36,7 +36,12 @@ export default function entities(state = {
       });
     case ENTITY_REMOVED:
       return Object.assign({}, state, {
-        entities: state.entities.filter(entity => entity.id !== action.entityId),
+        entities: (() => {
+          const { [String(action.entityId)]: deleted, ...updated } = state.entities;
+
+          return updated;
+        })(),
+        entityOrder: state.entityOrder.filter(entityId => entityId !== action.entityId),
       });
     default:
       return state;
